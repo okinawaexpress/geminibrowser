@@ -4,12 +4,13 @@ To-Do
 - Handle Meta codes and formatting
 - Assign each link on the page a number, user will type number to redirect
 - Keep a log of pages/sites visted for a backwards/forwards feature
+- Certificate system (TOFU)
 '''
 
 import socket, ssl, re
 
 #Page browser is currently on
-currentPage = ''
+currentPage = 'gemini://gemini.circumlunar.space/'
 
 def parseURL(url):
   #Should always be an absolute link
@@ -77,6 +78,8 @@ def parseData(data):
             print('\n')
         else:
             print(i)
+
+parseData(connectToHost(parseURL('gemini://gemini.circumlunar.space/')))
 
 while True:
     url = input("> ")
